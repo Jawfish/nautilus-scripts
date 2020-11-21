@@ -1,3 +1,4 @@
+# About
 Adds scripts to the right-click menu of Nautilus, the default file explorer in most Gnome-based distrobutions.
 
 # Installation
