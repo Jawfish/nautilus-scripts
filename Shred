@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# By using this script, you assume all responsibility for any data lost as a result of its use.
+# By using this script, you assume all responsibility for any lost data.
 
 import subprocess, os
 
@@ -11,7 +11,7 @@ prompt = subprocess.run(
         "--question",
         "--default-cancel",
         "--ellipsize",
-        "--text=Are you sure you want to irrevocably destroy the selected files? \nYou assume all responsibility for any data lost."
+        "--text=Are you sure you want to irrevocably destroy the selected files? \nYou assume all responsibility for any lost data."
     ]
 ).returncode
 if prompt == 0:

@@ -26,12 +26,12 @@ Opens the selected file in Visual Studio Code.
 ##### Arch: `pacman -Sy code`
 
 ## Shred:
-*By using this script, you assume all responsibility for any data lost as a result of its use.*
+*By using this script, you assume all responsibility for any lost data.*
 
 Recursively shreds the selected directory or file. Requires confirmation.
 
 
 ### Requirements:
-#### zenity
+#### Zenity
 ##### Ubuntu: `sudo apt install zenity`
 ##### Arch: `pacman -Sy zenity`
