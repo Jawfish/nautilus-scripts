@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# By using this script, you assume all responsibility for any data lost as a result of its use.
+
+import subprocess, os
+
+paths = os.environ["NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"].splitlines()
+# warn the user
+prompt = subprocess.run(
+    [
+        "zenity",
+        "--question",
+        "--default-cancel",
+        "--ellipsize",
+        "--text=Are you sure you want to irrevocably destroy the selected files? \nYou assume all responsibility for any data lost."
+    ]
+).returncode
+if prompt == 0:
+    for path in paths:
+        if os.path.isdir(path):
+            for root, subdirs, files in os.walk(path):
+                for filename in files:
+                    # shred files
+                    subprocess.run(["shred", "-u", os.path.join(root, filename)])
+                # clean up empty directories
+                subprocess.run(["rm", "-rf", root])
